@@ -7,7 +7,10 @@ class CustomAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 30),
+      padding: EdgeInsets.symmetric(
+        vertical: MediaQuery.of(context).size.height * .035,
+        horizontal: MediaQuery.of(context).size.height * .018,
+      ), //vertical: 30 , horizontal:15
       child: Row(
         children: [
           Image.asset(
@@ -15,7 +18,10 @@ class CustomAppBar extends StatelessWidget {
             height: 16,
           ),
           const Spacer(),
-          Image.asset(AssetsData.icSearch, height: 24),
+          InkWell(
+            onTap: () {},
+            child: Image.asset(AssetsData.icSearch, height: 24),
+          )
         ],
       ),
     );
