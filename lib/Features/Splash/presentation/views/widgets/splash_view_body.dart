@@ -1,9 +1,8 @@
-import 'package:bookly/Features/home/presentation/views/home_view.dart';
-import 'package:bookly/constants.dart';
 import 'package:bookly/core/utils/assets_data.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:get/get.dart';
+
+import 'package:go_router/go_router.dart';
 
 import 'sliding_text.dart';
 
@@ -65,12 +64,17 @@ class _SplashViewBodyState extends State<SplashViewBody>
 
   // دالة للانتقال إلى الشاشة الرئيسية
   void navigateToHome() {
-    Future.delayed(const Duration(seconds: 2), () {
-      Get.off(
-        () => const HomeView(), // الانتقال إلى الشاشة الرئيسية
-        duration: kTransitionDuration, // مدة الانتقال
-        transition: Transition.downToUp, // تأثير الانتقال من الأسفل إلى الأعلى
-      );
-    });
+    Future.delayed(
+      const Duration(seconds: 2),
+      () {
+        GoRouter.of(context).push('homeView');
+
+        // Get.off(
+        //   () => const HomeView(), // الانتقال إلى الشاشة الرئيسية
+        //   duration: kTransitionDuration, // مدة الانتقال
+        //   transition: Transition.downToUp, // تأثير الانتقال من الأسفل إلى الأعلى
+        // );
+      },
+    );
   }
 }
