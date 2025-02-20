@@ -10,55 +10,60 @@ class BestSellerListViewItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 125,
+      height: 125, // تحديد ارتفاع الحاوية
       child: Row(
         children: [
           AspectRatio(
-            aspectRatio: 2.5 / 4,
+            aspectRatio: 2.5 / 4, // يحافظ على نسبة العرض إلى الارتفاع للصورة
             child: Container(
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(15),
-                color: Colors.red,
+                borderRadius: BorderRadius.circular(15), // تدوير زوايا الصورة
+                color:
+                    Colors.red, // لون خلفية الحاوية (سيتم تجاوزه بواسطة الصورة)
                 image: const DecorationImage(
                   fit: BoxFit.fill,
                   image: AssetImage(
-                    AssetsData.book,
+                    AssetsData.book, //  مسار صورة
                   ),
                 ),
               ),
             ),
           ),
-          const SizedBox(width: 29.73),
+          const SizedBox(width: 29.73), // إضافة تباعد أفقي
           Expanded(
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment:
+                  CrossAxisAlignment.start, // محاذاة العناصر إلى بداية العمود
               children: [
                 SizedBox(
-                  width: MediaQuery.of(context).size.width * .4,
+                  width: MediaQuery.of(context).size.width *
+                      .4, // تحديد العرض بالنسبة لحجم الشاشة
                   child: Text(
-                    "Harry Potter and the Goblet of Fire",
-                    maxLines: 2,
-                    style:
-                        Styles.textStyle20.copyWith(fontFamily: kGtSectralFine),
-                    overflow: TextOverflow.ellipsis,
+                    "Harry Potter and the Goblet of Fire", // عنوان الكتاب
+                    maxLines: 2, // تحديد النص إلى سطرين
+                    style: Styles.textStyle20
+                        .copyWith(fontFamily: kGtSectralFine), // تطبيق نمط النص
+                    overflow: TextOverflow
+                        .ellipsis, // إضافة الحذف إذا تجاوز النص العرض المتاح
                   ),
                 ),
-                const SizedBox(height: 3),
+                const SizedBox(height: 3), // إضافة تباعد عمودي
                 Text(
-                  "J.K. Rowling",
-                  style: Styles.textStyle14
-                      .copyWith(color: const Color(0xff707070)),
+                  "J.K. Rowling", // اسم المؤلف
+                  style: Styles.textStyle14.copyWith(
+                      color: const Color(0xff707070)), // تطبيق نمط النص
                 ),
-                const SizedBox(height: 3),
+                const SizedBox(height: 3), // إضافة تباعد عمودي
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  mainAxisAlignment: MainAxisAlignment
+                      .spaceBetween, // توزيع المساحة بالتساوي بين العناصر
                   children: [
                     Text(
-                      "19.99 €",
-                      style: Styles.textStyle20
-                          .copyWith(fontWeight: FontWeight.bold),
+                      "19.99 €", // السعر
+                      style: Styles.textStyle20.copyWith(
+                          fontWeight: FontWeight.bold), // تطبيق نمط النص
                     ),
-                    const RatingBook(),
+                    const RatingBook(), // عنصر مخصص لعرض تقييم الكتاب
                   ],
                 ),
               ],

@@ -8,20 +8,25 @@ class CustomAppBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.symmetric(
-        vertical: MediaQuery.of(context).size.height * .035,
-        horizontal: MediaQuery.of(context).size.height * .018,
+        vertical: MediaQuery.of(context).size.height *
+            .035, // تحديد النسبة العمودية بناءً على نسبة من ارتفاع الشاشة
+        horizontal: MediaQuery.of(context).size.height *
+            .025, // تحديد النسبة الأفقية بناءً على نسبة من ارتفاع الشاشة
       ), //vertical: 30 , horizontal:15
       child: Row(
         children: [
           Image.asset(
-            AssetsData.logo,
-            height: 16,
+            AssetsData.logo, // اضافة مسار صورة
+            height: 16, // تحديد ارتفاع الصورة
           ),
-          const Spacer(),
+          const Spacer(), // إضافة مسافة فارغة قابلة للتوسع بين العناصر
           InkWell(
-            onTap: () {},
-            child: Image.asset(AssetsData.icSearch, height: 24),
-          )
+            onTap: () {}, // تعيين دالة الاستجابة عند النقر على الصورة
+            child: Image.asset(
+              AssetsData.icSearch, // تحميل صورة أيقونة البحث من الأصول
+              height: 24, // تحديد ارتفاع الصورة
+            ),
+          ),
         ],
       ),
     );

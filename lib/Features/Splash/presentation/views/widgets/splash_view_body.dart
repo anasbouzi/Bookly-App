@@ -16,63 +16,60 @@ class SplashViewBody extends StatefulWidget {
 
 class _SplashViewBodyState extends State<SplashViewBody>
     with SingleTickerProviderStateMixin {
-  late AnimationController animationController;
-  late Animation<Offset> slidingAnimation;
+  late AnimationController animationController; // متحكم في الحركة
+  late Animation<Offset> slidingAnimation; // متغير للحركة الانزلاقية
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
-    initSlidingAnimation();
-
-    navigateToHome();
+    initSlidingAnimation(); // تهيئة الحركة الانزلاقية
+    navigateToHome(); // الانتقال إلى الشاشة الرئيسية بعد تأخير
   }
 
-// To close the animationController
   @override
   void dispose() {
-    // TODO: implement dispose
     super.dispose();
-    animationController.dispose();
+    animationController
+        .dispose(); // إغلاق المتحكم في الحركة عند التخلص من الويدجت
   }
 
   @override
   Widget build(BuildContext context) {
     return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      crossAxisAlignment: CrossAxisAlignment.stretch,
+      mainAxisAlignment: MainAxisAlignment.center, // محاذاة المحتوى في المنتصف
+      crossAxisAlignment: CrossAxisAlignment.stretch, // توسيع المحتوى أفقيًا
       children: [
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
           child: Image.asset(
-            AssetsData.logo,
+            AssetsData.logo, // عرض صورة الشعار
           ),
         ),
-        const SizedBox(height: 7),
-        SlidingText(slidingAnimation: slidingAnimation)
+        const SizedBox(height: 7), // مسافة بين الشعار والنص
+        SlidingText(slidingAnimation: slidingAnimation) // عرض النص المنزلق
       ],
     );
   }
 
-// Animation method
+  // دالة لتهيئة الحركة الانزلاقية
   void initSlidingAnimation() {
     animationController = AnimationController(
       vsync: this,
-      duration: const Duration(seconds: 2),
+      duration: const Duration(seconds: 2), // مدة الحركة: ثانيتين
     );
     slidingAnimation =
         Tween<Offset>(begin: const Offset(0, 2), end: Offset.zero)
-            .animate(animationController);
-    animationController.forward();
+            .animate(animationController); // تهيئة الحركة من الأسفل إلى الأعلى
+    animationController.forward(); // بدء الحركة
   }
 
-  // method to navigate screen
+  // دالة للانتقال إلى الشاشة الرئيسية
   void navigateToHome() {
     Future.delayed(const Duration(seconds: 2), () {
       Get.off(
-        () => const HomeView(),
-        duration: kTransitionDuration,
-        transition: Transition.downToUp,
+        () => const HomeView(), // الانتقال إلى الشاشة الرئيسية
+        duration: kTransitionDuration, // مدة الانتقال
+        transition: Transition.downToUp, // تأثير الانتقال من الأسفل إلى الأعلى
       );
     });
   }

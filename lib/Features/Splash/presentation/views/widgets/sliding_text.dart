@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class SlidingText extends StatelessWidget {
   const SlidingText({
     super.key,
-    required this.slidingAnimation,
+    required this.slidingAnimation, // متغير للتحكم في الحركة الانزلاقية
   });
 
   final Animation<Offset> slidingAnimation;
@@ -14,10 +14,10 @@ class SlidingText extends StatelessWidget {
         animation: slidingAnimation,
         builder: (context, _) {
           return SlideTransition(
-            position: slidingAnimation,
+            position: slidingAnimation, // تطبيق الحركة الانزلاقية
             child: const Text(
-              'Read Free Books',
-              textAlign: TextAlign.center,
+              'Read Free Books', // النص المعروض
+              textAlign: TextAlign.center, // محاذاة النص في المنتصف
             ),
           );
         });

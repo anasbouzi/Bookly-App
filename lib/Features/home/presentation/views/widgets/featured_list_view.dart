@@ -7,13 +7,15 @@ class FeaturedBookListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: MediaQuery.of(context).size.height * .3,
+      height: MediaQuery.of(context).size.height *
+          .3, // تحديد ارتفاع بالنسبة لحجم الشاشة
       child: ListView.builder(
-        scrollDirection: Axis.horizontal,
+        scrollDirection: Axis.horizontal, // تحديد اتجاه التمرير كأفقي
         itemBuilder: (context, index) {
           return const Padding(
-            padding: EdgeInsets.only(right: 10),
-            child: FeaturedListViewItem(),
+            padding: EdgeInsets.only(right: 10), // إضافة تباعد أفقي بين العناصر
+            child:
+                FeaturedListViewItem(), // عنصر مخصص يمثل الكتاب المميز في القائمة
           );
         },
       ),
