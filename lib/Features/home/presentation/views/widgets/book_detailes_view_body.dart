@@ -1,3 +1,4 @@
+import 'package:bookly/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
@@ -13,8 +14,22 @@ class BookDetailesViewBody extends StatelessWidget {
       children: [
         const CustomBookDetailesAppBar(),
         Padding(
-          padding: EdgeInsets.symmetric(horizontal: width * .19),
+          padding: EdgeInsets.symmetric(horizontal: width * .2),
           child: const CustomBookImage(),
+        ),
+        const SizedBox(height: 43),
+        Text("The Ironn Flame",
+            style: Styles.textStyle30.copyWith(
+              fontWeight: FontWeight.bold,
+            )),
+        const SizedBox(height: 6),
+        Opacity(
+          opacity: .7,
+          child: Text("Rudyard kipling",
+              style: Styles.textStyle18.copyWith(
+                fontStyle: FontStyle.italic,
+                fontWeight: FontWeight.w500,
+              )),
         ),
       ],
     );
