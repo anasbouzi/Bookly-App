@@ -1,3 +1,4 @@
+import 'package:bookly/core/utils/app_router.dart';
 import 'package:bookly/core/utils/assets_data.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -67,7 +68,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
     Future.delayed(
       const Duration(seconds: 2),
       () {
-        GoRouter.of(context).push('homeView');
+        GoRouter.of(context).push(AppRouter.kHomeView);
 
         // Get.off(
         //   () => const HomeView(), // الانتقال إلى الشاشة الرئيسية
