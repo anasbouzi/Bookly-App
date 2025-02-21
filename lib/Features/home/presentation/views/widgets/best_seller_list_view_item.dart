@@ -4,7 +4,7 @@ import 'package:bookly/core/utils/assets_data.dart';
 import 'package:bookly/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'book_reting.dart';
+import 'book_rating.dart';
 
 class BestSellerListViewItem extends StatelessWidget {
   const BestSellerListViewItem({super.key});
@@ -69,7 +69,7 @@ class BestSellerListViewItem extends StatelessWidget {
                         style: Styles.textStyle20.copyWith(
                             fontWeight: FontWeight.bold), // تطبيق نمط النص
                       ),
-                      const RatingBook(), // عنصر مخصص لعرض تقييم الكتاب
+                      const BookRating(), // عنصر مخصص لعرض تقييم الكتاب
                     ],
                   ),
                 ],
