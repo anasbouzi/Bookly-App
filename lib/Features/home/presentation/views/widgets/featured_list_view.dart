@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'custom_list_view_item.dart';
+import 'custom_book_item.dart';
 
 class FeaturedBookListView extends StatelessWidget {
   const FeaturedBookListView({super.key});
@@ -15,7 +15,7 @@ class FeaturedBookListView extends StatelessWidget {
           return const Padding(
             padding: EdgeInsets.only(right: 10), // إضافة تباعد أفقي بين العناصر
             child:
-                FeaturedListViewItem(), // عنصر مخصص يمثل الكتاب المميز في القائمة
+                CustomBookImage(), // عنصر مخصص يمثل الكتاب المميز في القائمة
           );
         },
       ),
