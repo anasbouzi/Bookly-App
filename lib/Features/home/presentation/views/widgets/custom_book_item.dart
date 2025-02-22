@@ -7,7 +7,7 @@ class CustomBookImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AspectRatio(
-      aspectRatio: 2.7 / 4, // يحافظ على نسبة العرض إلى الارتفاع للصورة
+      aspectRatio: 2.6 / 4, // يحافظ على نسبة العرض إلى الارتفاع للصورة
       child: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(15), // تدوير زوايا الصورة
