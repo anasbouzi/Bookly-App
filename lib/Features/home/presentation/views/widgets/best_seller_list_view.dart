@@ -14,7 +14,7 @@ class BestSellerListView extends StatelessWidget {
         return const Padding(
           padding: EdgeInsets.symmetric(
               vertical: 10, horizontal: 10), // إضافة تباعد عمودي وأفقي
-          child: BestSellerListViewItem(), // عنصر يمثل كتابًا في القائمة
+          child: BookListViewItem(), // عنصر يمثل كتابًا في القائمة
         );
       },
     );

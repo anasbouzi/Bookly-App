@@ -68,8 +68,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
     Future.delayed(
       const Duration(seconds: 2),
       () {
-        GoRouter.of(context).push(AppRouter.kHomeView);
-
+        GoRouter.of(context).pushReplacement(AppRouter.kHomeView);
         // Get.off(
         //   () => const HomeView(), // الانتقال إلى الشاشة الرئيسية
         //   duration: kTransitionDuration, // مدة الانتقال

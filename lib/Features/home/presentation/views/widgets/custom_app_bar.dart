@@ -1,5 +1,7 @@
+import 'package:bookly/core/utils/app_router.dart';
 import 'package:bookly/core/utils/assets_data.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class CustomAppBar extends StatelessWidget {
   const CustomAppBar({super.key});
@@ -21,7 +23,9 @@ class CustomAppBar extends StatelessWidget {
           ),
           const Spacer(), // إضافة مسافة فارغة قابلة للتوسع بين العناصر
           InkWell(
-            onTap: () {}, // تعيين دالة الاستجابة عند النقر على الصورة
+            onTap: () {
+              GoRouter.of(context).push(AppRouter.kSearchView);
+            }, // تعيين دالة الاستجابة عند النقر على الصورة
             child: Image.asset(
               AssetsData.icSearch, // تحميل صورة أيقونة البحث من الأصول
               height: 24, // تحديد ارتفاع الصورة
