@@ -3,6 +3,9 @@ import 'package:bookly/core/errors/failure.dart';
 import 'package:dartz/dartz.dart';
 
 abstract class HomeRepo {
-  Future<Either<Failure, List<BookModel>>> featchBestSellerBooks();
-  Future<Either<Failure, List<BookModel>>> featchFeaturedBooks();
+  // دالة لجلب قائمة الكتب الأكثر مبيعًا
+  Future<Either<Failure, List<BookModel>>> fetchNewestBooks();
+
+  // دالة لجلب قائمة الكتب المميزة
+  Future<Either<Failure, List<BookModel>>> fetchFeaturedBooks();
 }

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:bookly/constants.dart';
 
 abstract class Styles {
+  // تعريف أنماط النصوص المختلفة
   static const textStyle14 = TextStyle(
     fontWeight: FontWeight.normal,
     fontSize: 14,
@@ -21,6 +22,6 @@ abstract class Styles {
   static const textStyle30 = TextStyle(
     fontSize: 30,
     fontWeight: FontWeight.normal,
-    fontFamily: kGtSectralFine,
+    fontFamily: kGtSectralFine, // استخدام خط محدد من الثوابت
   );
 }
