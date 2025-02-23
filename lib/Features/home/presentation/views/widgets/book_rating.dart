@@ -10,7 +10,7 @@ class BookRating extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: mainAxisAlignment,
-      children:  [
+      children: [
         const Icon(
           size: 16,
           Icons.star_rate_rounded, // رمز النجمة للتقييم
@@ -23,9 +23,8 @@ class BookRating extends StatelessWidget {
           opacity: .5,
           child: Text(
             '(2390)', // عدد المراجعات
-            style: Styles.textStyle14.copyWith(
-              fontWeight: FontWeight.w600
-            ) // لون النص
+            style: Styles.textStyle14
+                .copyWith(fontWeight: FontWeight.w600) // لون النص
             ,
           ),
         ),

@@ -12,7 +12,7 @@ class BookListViewItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: (){
+      onTap: () {
         GoRouter.of(context).push(AppRouter.kBookDetailesView);
       },
       child: SizedBox(
@@ -24,8 +24,8 @@ class BookListViewItem extends StatelessWidget {
               child: Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15), // تدوير زوايا الصورة
-                  color:
-                      Colors.red, // لون خلفية الحاوية (سيتم تجاوزه بواسطة الصورة)
+                  color: Colors
+                      .red, // لون خلفية الحاوية (سيتم تجاوزه بواسطة الصورة)
                   image: const DecorationImage(
                     fit: BoxFit.fill,
                     image: AssetImage(
@@ -47,8 +47,8 @@ class BookListViewItem extends StatelessWidget {
                     child: Text(
                       "Harry Potter and the Goblet of Fire", // عنوان الكتاب
                       maxLines: 2, // تحديد النص إلى سطرين
-                      style: Styles.textStyle20
-                          .copyWith(fontFamily: kGtSectralFine), // تطبيق نمط النص
+                      style: Styles.textStyle20.copyWith(
+                          fontFamily: kGtSectralFine), // تطبيق نمط النص
                       overflow: TextOverflow
                           .ellipsis, // إضافة الحذف إذا تجاوز النص العرض المتاح
                     ),

@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 class CustomSearchTextField extends StatelessWidget {
@@ -9,7 +8,7 @@ class CustomSearchTextField extends StatelessWidget {
     return TextField(
       decoration: InputDecoration(
         enabledBorder: buildOutlineInputBorder(),
-        focusedBorder:buildOutlineInputBorder() ,
+        focusedBorder: buildOutlineInputBorder(),
         suffixIcon: Opacity(
           opacity: .8,
           child: IconButton(
