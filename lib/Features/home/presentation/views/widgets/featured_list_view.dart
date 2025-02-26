@@ -21,11 +21,12 @@ class FeaturedBookListView extends StatelessWidget {
               itemCount: state.books.length,
               scrollDirection: Axis.horizontal, // تحديد اتجاه التمرير كأفقي
               itemBuilder: (context, index) {
-                return  Padding(
-                  padding:const EdgeInsets.only(
+                return Padding(
+                  padding: const EdgeInsets.only(
                       right: 10), // إضافة تباعد أفقي بين العناصر
                   child: CustomBookImage(
-                  imageUrl: state.books[index].volumeInfo.imageLinks.thumbnail,
+                    imageUrl:
+                        state.books[index].volumeInfo.imageLinks?.thumbnail??'',
                   ), // عنصر مخصص يمثل الكتاب المميز في القائمة
                 );
               },

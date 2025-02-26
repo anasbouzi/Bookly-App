@@ -25,7 +25,7 @@ class VolumeInfo extends Equatable {
   final bool? allowAnonLogging; // السماح بالتسجيل المجهول
   final String? contentVersion; // إصدار المحتوى
   final PanelizationSummary? panelizationSummary; // ملخص التصميم
-  final ImageLinks imageLinks; // روابط الصور
+  final ImageLinks? imageLinks; // روابط الصور
   final String? language; // اللغة
   final String? previewLink; // رابط المعاينة
   final String? infoLink; // رابط المعلومات
@@ -72,7 +72,8 @@ class VolumeInfo extends Equatable {
             .toList(),
         readingModes: json['readingModes'] == null
             ? null
-            : ReadingModes.fromJson(json['readingModes'] as Map<String, dynamic>),
+            : ReadingModes.fromJson(
+                json['readingModes'] as Map<String, dynamic>),
         pageCount: json['pageCount'] as int?,
         printType: json['printType'] as String?,
         categories: (json['categories'] as List<dynamic>?)?.cast<String>(),
@@ -81,14 +82,19 @@ class VolumeInfo extends Equatable {
         contentVersion: json['contentVersion'] as String?,
         panelizationSummary: json['panelizationSummary'] == null
             ? null
-            : PanelizationSummary.fromJson(json['panelizationSummary'] as Map<String, dynamic>),
-        imageLinks: ImageLinks.fromJson(json['imageLinks'] as Map<String, dynamic>),
+            : PanelizationSummary.fromJson(
+                json['panelizationSummary'] as Map<String, dynamic>),
+        imageLinks: json['imageLinks'] == null
+            ? null
+            : ImageLinks.fromJson(json['imageLinks'] as Map<String, dynamic>),
         language: json['language'] as String?,
         previewLink: json['previewLink'] as String?,
         infoLink: json['infoLink'] as String?,
         canonicalVolumeLink: json['canonicalVolumeLink'] as String?,
-        averageRating: (json['averageRating'] as num?)?.toInt(), // تحويل إلى int أو null
-        ratingsCount: json['ratingsCount'] as int?, // عدد التقييمات كعدد صحيح أو null
+        averageRating:
+            (json['averageRating'] as num?)?.toInt(), // تحويل إلى int أو null
+        ratingsCount:
+            json['ratingsCount'] as int?, // عدد التقييمات كعدد صحيح أو null
       );
 
   // تحويل الكائن إلى JSON
@@ -99,7 +105,8 @@ class VolumeInfo extends Equatable {
         'publisher': publisher,
         'publishedDate': publishedDate,
         'description': description,
-        'industryIdentifiers': industryIdentifiers?.map((e) => e.toJson()).toList(),
+        'industryIdentifiers':
+            industryIdentifiers?.map((e) => e.toJson()).toList(),
         'readingModes': readingModes?.toJson(),
         'pageCount': pageCount,
         'printType': printType,

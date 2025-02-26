@@ -22,9 +22,10 @@ class HomeRepoImpl implements HomeRepo {
     try {
       // إجراء طلب GET إلى نقطة نهاية API لجلب الكتب المتعلقة بالبرمجة
       var data = await apiRequest.get(
-          endPoint: "volumes?q=subject:Programming"); // نقطة النهاية: استعلام عن كتب البرمجة
-            // ملاحظة: السطر المعلق كان يحتوي على تكرار ومعاملات إضافية مثل Filtering وSorting
-            // "volumes?q=subject:Programmingvolumes?q=subject:Programming&Filtering=free-ebooks&Sorting=newest"
+          endPoint:
+              "volumes?q=computer science"); // نقطة النهاية: استعلام عن كتب البرمجة
+      // ملاحظة: السطر المعلق كان يحتوي على تكرار ومعاملات إضافية مثل Filtering وSorting
+      // "volumes?q=subject:Programmingvolumes?q=subject:Programming&Filtering=free-ebooks&Sorting=newest"
 
       // إنشاء قائمة فارغة لتخزين الكتب التي سيتم تحليلها من الاستجابة
       List<BookModel> books = [];
@@ -59,7 +60,8 @@ class HomeRepoImpl implements HomeRepo {
     try {
       // إجراء طلب GET إلى نقطة نهاية API لجلب كتب البرمجة (بدون تصفية إضافية)
       var data = await apiRequest.get(
-          endPoint: "volumes?q=subject:Programming"); // نقطة النهاية: استعلام عن كتب البرمجة
+          endPoint:
+              "volumes?q=subject:Programming"); // نقطة النهاية: استعلام عن كتب البرمجة
 
       // إنشاء قائمة فارغة لتخزين الكتب المميزة
       List<BookModel> books = [];

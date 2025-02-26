@@ -18,7 +18,7 @@ class HomeViewBody extends StatelessWidget {
               CrossAxisAlignment.start, // محاذاة العناصر إلى بداية العمود
           children: [
             CustomAppBar(), // استدعاء شريط المميزة
-            SizedBox(height: 40), // إضافة تباع التطبيق المخصص
+            SizedBox(height: 25), // إضافة تباع التطبيق المخصص
             FeaturedBookListView(), // استدعاء قائمة الكتبد عمودي
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 10), // إضافة تباعد أفقي

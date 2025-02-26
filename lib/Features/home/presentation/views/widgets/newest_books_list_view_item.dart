@@ -2,7 +2,6 @@ import 'package:bookly/Features/home/data/models/book_model/book_model.dart';
 import 'package:bookly/Features/home/presentation/views/widgets/custom_book_item.dart';
 import 'package:bookly/constants.dart';
 import 'package:bookly/core/utils/app_router.dart';
-import 'package:bookly/core/utils/assets_data.dart';
 import 'package:bookly/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -18,11 +17,11 @@ class NewestBookListViewItem extends StatelessWidget {
         GoRouter.of(context).push(AppRouter.kBookDetailesView);
       },
       child: SizedBox(
-        height: 125, // تحديد ارتفاع الحاوية
+        height: 135, // تحديد ارتفاع الحاوية
         child: Row(
           children: [
             CustomBookImage(
-                imageUrl: bookModel.volumeInfo.imageLinks.thumbnail),
+                imageUrl: bookModel.volumeInfo.imageLinks?.thumbnail??''),
 
             const SizedBox(width: 29.73), // إضافة تباعد أفقي
             Expanded(
