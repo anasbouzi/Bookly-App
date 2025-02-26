@@ -8,7 +8,8 @@ class CustomButton extends StatelessWidget {
     required this.textColor, // لون النص (غير مستخدم حاليًا)
     this.borderRadius, // نصف قطر حافة الزر (اختياري)
     required this.text, // النص المعروض داخل الزر
-    this.fontSize, // حجم الخط (اختياري)
+    this.fontSize,
+    this.onPressed, // حجم الخط (اختياري)
   });
 
   final String text;
@@ -16,7 +17,7 @@ class CustomButton extends StatelessWidget {
   final Color textColor;
   final BorderRadius? borderRadius;
   final double? fontSize;
-
+  final void Function()? onPressed;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -29,7 +30,7 @@ class CustomButton extends StatelessWidget {
                 BorderRadius.circular(12), // تعيين نصف قطر الحواف
           ),
         ),
-        onPressed: () {}, //وظيفة الزر
+        onPressed: onPressed, //وظيفة الزر
         child: Text(
           text,
           style: Styles.textStyle16.copyWith(
