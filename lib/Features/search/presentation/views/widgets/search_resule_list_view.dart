@@ -1,4 +1,4 @@
-import 'package:bookly/Features/home/presentation/views/widgets/best_seller_list_view_item.dart';
+import 'package:bookly/Features/home/presentation/views/widgets/newest_books_list_view_item.dart';
 import 'package:flutter/material.dart';
 
 class SearchRsultListView extends StatelessWidget {
@@ -14,7 +14,8 @@ class SearchRsultListView extends StatelessWidget {
         return const Padding(
           padding: EdgeInsets.symmetric(
               vertical: 10, horizontal: 10), // إضافة تباعد عمودي وأفقي
-          child: BookListViewItem(), // عنصر يمثل كتابًا في القائمة
+        //  child: BookListViewItem(bookModel: ,), // عنصر يمثل كتابًا في القائمة
+        child: Text('anasm'),
         );
       },
     );

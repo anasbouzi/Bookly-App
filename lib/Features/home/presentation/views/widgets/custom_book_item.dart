@@ -20,15 +20,3 @@ class CustomBookImage extends StatelessWidget {
     );
   }
 }
-// Container(
-//         decoration: BoxDecoration(
-//           borderRadius: BorderRadius.circular(15), // تدوير زوايا الصورة
-//           // color: Colors.red, // لون خلفية الحاوية (تم التعليق على السطر)
-//           image: DecorationImage(
-//             fit: BoxFit.fill,
-//             image: NetworkImage(
-//               imageUrl, // مسار صورة الأصول
-//             ),
-//           ),
-//         ),
-//       )
