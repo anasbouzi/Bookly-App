@@ -14,14 +14,15 @@ class NewestBookListViewItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        GoRouter.of(context).push(AppRouter.kBookDetailesView);
+        GoRouter.of(context)
+            .push(AppRouter.kBookDetailesView, extra: bookModel);
       },
       child: SizedBox(
         height: 135, // تحديد ارتفاع الحاوية
         child: Row(
           children: [
             CustomBookImage(
-                imageUrl: bookModel.volumeInfo.imageLinks?.thumbnail??''),
+                imageUrl: bookModel.volumeInfo.imageLinks?.thumbnail ?? ''),
 
             const SizedBox(width: 29.73), // إضافة تباعد أفقي
             Expanded(
@@ -58,8 +59,8 @@ class NewestBookListViewItem extends StatelessWidget {
                             fontWeight: FontWeight.bold), // تطبيق نمط النص
                       ),
                       BookRating(
-                        rating: bookModel.volumeInfo.averageRating??0,
-                        count: bookModel.volumeInfo.ratingsCount??0,
+                        rating: bookModel.volumeInfo.averageRating ?? 0,
+                        count: bookModel.volumeInfo.ratingsCount ?? 0,
                       ), // عنصر مخصص لعرض تقييم الكتاب
                     ],
                   ),
