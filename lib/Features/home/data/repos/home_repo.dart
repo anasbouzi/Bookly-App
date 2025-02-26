@@ -8,4 +8,5 @@ abstract class HomeRepo {
 
   // دالة لجلب قائمة الكتب المميزة
   Future<Either<Failure, List<BookModel>>> fetchFeaturedBooks();
+  Future<Either<Failure, List<BookModel>>> fetchSimilarBooks({required String category});
 }

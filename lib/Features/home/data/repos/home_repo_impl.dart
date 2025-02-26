@@ -85,4 +85,36 @@ class HomeRepoImpl implements HomeRepo {
       return left(ServerFailure(e.toString()));
     }
   }
+
+  @override
+  Future<Either<Failure, List<BookModel>>> fetchSimilarBooks(
+      {required String category}) async {
+    try {
+      // إجراء طلب GET إلى نقطة نهاية API لجلب كتب البرمجة (بدون تصفية إضافية)
+      var data = await apiRequest.get(
+          endPoint:
+              "volumes?q=subject:Programming&Filtering=free-ebooks&Sorting=relevance"); // نقطة النهاية: استعلام عن كتب البرمجة
+
+      // إنشاء قائمة فارغة لتخزين الكتب المميزة
+      List<BookModel> books = [];
+
+      // التكرار على العناصر في 'items' من استجابة API
+      // يفترض أن 'items' يحتوي على قائمة الكتب في JSON
+      for (var item in data['items']) {
+        // تحويل كل عنصر JSON إلى كائن BookModel وإضافته إلى القائمة
+        books.add(BookModel.fromJson(item));
+      }
+
+      // إرجاع النجاح باستخدام Right مع قائمة الكتب المميزة
+      return right(books);
+    } catch (e) {
+      // التعامل مع الأخطاء التي قد تحدث أثناء الطلب أو التحليل
+      if (e is DioException) {
+        // إذا كان الخطأ من نوع DioException، إرجاع فشل مخصص من Dio
+        return left(ServerFailure.fromDioError(e));
+      }
+      // إذا كان الخطأ عامًا، إرجاع رسالة الخطأ كنص
+      return left(ServerFailure(e.toString()));
+    }
+  }
 }
