@@ -8,6 +8,7 @@ import 'widgets/book_detailes_view_body.dart';
 class BookDetailesView extends StatefulWidget {
   const BookDetailesView({super.key, required this.bookModel});
   final BookModel bookModel;
+
   @override
   State<BookDetailesView> createState() => _BookDetailesViewState();
 }
@@ -16,15 +17,20 @@ class _BookDetailesViewState extends State<BookDetailesView> {
   @override
   void initState() {
     super.initState();
-    BlocProvider.of<SimilarBooksCubit>(context).fetchSimilarBooks(
-        category: widget.bookModel.volumeInfo.categories![0]);
+    // التحقق من وجود categories وأنها غير فارغة
+    final category = widget.bookModel.volumeInfo.categories?.isNotEmpty == true
+        ? widget.bookModel.volumeInfo.categories![0]
+        : 'General'; // قيمة افتراضية
+    BlocProvider.of<SimilarBooksCubit>(context).fetchSimilarBooks(category: category);
   }
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: SafeArea(
-        child: BookDetailesViewBody(),
+        child: BookDetailesViewBody(
+          bookModel: widget.bookModel,
+        ),
       ),
     );
   }

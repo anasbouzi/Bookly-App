@@ -31,7 +31,7 @@ class VolumeInfo extends Equatable {
   final String? infoLink; // رابط المعلومات
   final String? canonicalVolumeLink; // الرابط الرسمي
   final int? averageRating; // متوسط التقييم كنوع عدد صحيح (جديد)
-  final int? ratingsCount; // عدد التقييمات كنوع عدد صحيح (جديد)
+  final num? ratingsCount; // عدد التقييمات كنوع عدد صحيح (جديد)
 
   // المُنشئ مع الحقلين الجديدين كمعاملات اختيارية من نوع int?
   const VolumeInfo({
