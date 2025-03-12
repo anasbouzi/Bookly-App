@@ -18,7 +18,7 @@ class NewestBookListViewItem extends StatelessWidget {
             .push(AppRouter.kBookDetailesView, extra: bookModel);
       },
       child: SizedBox(
-        height: 135, // تحديد ارتفاع الحاوية
+        height: 150, // تحديد ارتفاع الحاوية
         child: Row(
           children: [
             CustomBookImage(
